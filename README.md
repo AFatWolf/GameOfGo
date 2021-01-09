@@ -28,7 +28,7 @@ Then, start to run server:
 python manage.py runserver
 ```
 
-## How to develop fronend
+## How to develop frontend more
 If your want to develop frontend more, change directory to `go/frontend`. Then, install dependencies:
 ```
 npm install
