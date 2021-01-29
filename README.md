@@ -1,7 +1,7 @@
 # Group-project-2020
 
-## Introdction
-A game of go.
+## Introduction
+Simply put, a multiplayer game of go.
 
 ## How to install
 Change directory to project:
