@@ -98,11 +98,15 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-import dj_database_url
-db_from_env = dj_database_url.config()
-
 DATABASES = {
-    'default': db_from_env
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ddo26hvvjuginf',
+        'USER': 'fcvpxicjggnfoo`    ',
+        'PASSWORD': '65cfe691d478d2b4639476b9c94bb1f07b138babf6ebb632c3a63af8a1038f54',
+        'HOST': 'ec2-54-164-241-193.compute-1.amazonaws.com',
+        'PORT': '',
+    }
 }
 
 
