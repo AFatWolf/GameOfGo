@@ -98,15 +98,11 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+import dj_database_url
+db_from_env = dj_database_url.config()
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'go',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'tybeo123',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
+    'default': db_from_env
 }
 
 
