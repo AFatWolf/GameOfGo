@@ -1,2 +1,3 @@
 release: python manage.py migrate
-web: gunicorn -c config/gunicorn.conf.py --pythonpath go go.wsgi:application --log-file -
+web: cd go;daphne -b 0.0.0.0 -p 8001 go.asgi:application
+worker: python manage.py runworker
