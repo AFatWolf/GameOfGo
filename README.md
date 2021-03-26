@@ -1,7 +1,8 @@
 # Group-project-2020
 
 ## Introduction
-Simply put, a multiplayer game of go.
+Simply put, a [multiplayer game of go](https://evening-springs-64526.herokuapp.com/).
+(It might take some time to load at first) 
 
 ## How to install
 Change directory to project:
