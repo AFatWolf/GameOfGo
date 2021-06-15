@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'p=-)0+$eqlhie&xg30&s-88#4z7-87rem^#n2vk(f_%%o52=$a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['gogogogame.herokuapp.com', '0.0.0.0', '127.0.0.1', 'localhost']
 
