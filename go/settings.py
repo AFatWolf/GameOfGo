@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'p=-)0+$eqlhie&xg30&s-88#4z7-87rem^#n2vk(f_%%o52=$a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['gogogogame.herokuapp.com']
+ALLOWED_HOSTS = ['gogogogame.herokuapp.com', '0.0.0.0', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -91,7 +91,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
+            "hosts": [("redis://:pfd136800fe429937ca0286c31f0df3609ef774697755f05579bf110f991e1424@ec2-52-45-242-116.compute-1.amazonaws.com:6760")],
         },
     },
 }
@@ -99,15 +99,10 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'go',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'tybeo123',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
+    'default': db_from_env
 }
 
 
