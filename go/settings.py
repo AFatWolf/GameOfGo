@@ -26,7 +26,7 @@ SECRET_KEY = 'p=-)0+$eqlhie&xg30&s-88#4z7-87rem^#n2vk(f_%%o52=$a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gogogogame.herokuapp.com']
 
 
 # Application definition
