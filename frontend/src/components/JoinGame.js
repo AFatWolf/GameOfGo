@@ -57,7 +57,7 @@ export default class JoinGame extends Component {
     //     console.log("Join game");
     //     console.log(data);
     //     // notify the host that i am in
-    //     let waitURL = "ws://" + window.location.host + "/ws/wait/" + this.props.code + "/";
+    //     let waitURL = "wss://" + window.location.host + "/ws/wait/" + this.props.code + "/";
     //     this.waitSocket = new WebSocket(waitURL);
     //     this.waitSocket.send(JSON.stringify({'signal': 'start-game'}));
     //     this.waitSocket.close();

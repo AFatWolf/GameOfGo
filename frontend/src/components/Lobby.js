@@ -125,7 +125,7 @@ export default class Lobby extends Component {
         }
         // notify the host that i am in
         let waitURL =
-          "ws://" + window.location.host + "/ws/wait/" + data.code + "/";
+          "wss://" + window.location.host + "/ws/wait/" + data.code + "/";
         this.waitSocket = new WebSocket(waitURL);
         waitForSocketConnection(this.waitSocket, () => {
           this.waitSocket.send(JSON.stringify({ signal: "start-game" }));
@@ -145,7 +145,7 @@ export default class Lobby extends Component {
         });
       });
     if(this.lobbySocket){
-      const lobbyURL = "ws://" + window.location.host + "/ws/lobby/";
+      const lobbyURL = "wss://" + window.location.host + "/ws/lobby/";
       this.lobbySocket = new WebSocket(lobbyURL);
       this.lobbySocket.onmessage = (e) => {
         let data = JSON.parse(e.data);

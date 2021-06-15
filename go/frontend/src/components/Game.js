@@ -166,7 +166,7 @@ export default class Game extends Component {
         // connect chat channel
         // init game websocket
         let gameSocketURL =
-          "ws://" + window.location.host + "/ws/game/" + data.code + "/";
+          "wss://" + window.location.host + "/ws/game/" + data.code + "/";
         this.gameSocket = new WebSocket(gameSocketURL);
         this.gameSocket.onmessage = (e) => {
           let data = JSON.parse(e.data);
@@ -203,7 +203,7 @@ export default class Game extends Component {
         };
         /****/
         // init chat websocket
-        let chatSocketURL = `ws://${window.location.host}/ws/chat/${data.chat_channel_code}/`;
+        let chatSocketURL = `wss://${window.location.host}/ws/chat/${data.chat_channel_code}/`;
         this.chatSocket = new WebSocket(chatSocketURL);
         this.chatSocket.onmessage = (e) => {
           let data = JSON.parse(e.data);
