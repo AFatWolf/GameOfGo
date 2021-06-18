@@ -87,13 +87,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'go.wsgi.application'
 
 ASGI_APPLICATION = 'go.asgi.application'
+
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {
+#             "hosts": [os.environ.get("REDIS_URL")],
+#         },
+#     },
+# }
+
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [("redis://:pfd136800fe429937ca0286c31f0df3609ef774697755f05579bf110f991e1424@ec2-52-45-242-116.compute-1.amazonaws.com:6760")],
-        },
-    },
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
 }
 
 # Database

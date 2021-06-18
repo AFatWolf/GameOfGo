@@ -7,7 +7,8 @@ export default class WaitingRoom extends Component {
     }
 
     componentDidMount(){
-        let waitURL = "wss://" + window.location.host + "/ws/wait/" + this.props.code + "/";
+        let urlscheme = window.location.protocol === "https:" ? "wss://" : "ws://";
+        let waitURL = urlscheme + window.location.host + "/ws/wait/" + this.props.code + "/";
         this.waitSocket = new WebSocket(waitURL);
         this.waitSocket.onmessage = (e) => {
             console.log("stop wait")

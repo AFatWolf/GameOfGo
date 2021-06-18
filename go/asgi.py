@@ -13,9 +13,15 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'go.settings')
 
 application = ProtocolTypeRouter({
     "http": get_asgi_application(),
+    # "https": get_asgi_application(),
     "websocket": AuthMiddlewareStack(
         URLRouter(
             api.routing.websocket_urlpatterns
         )
     ),
+    # "websockets": AuthMiddlewareStack(
+    #     URLRouter(
+    #         api.routing.websocket_urlpatterns
+    #     )
+    # ),
 })
