@@ -145,7 +145,7 @@ export default class Lobby extends Component {
           games: data,
         });
       });
-    if(this.lobbySocket){
+    if(!this.lobbySocket){
       let urlscheme = window.location.protocol === "https:" ? "wss://" : "ws://";
       const lobbyURL = urlscheme + window.location.host + "/ws/lobby/";
       this.lobbySocket = new WebSocket(lobbyURL);
@@ -161,7 +161,7 @@ export default class Lobby extends Component {
         }
       };
       this.lobbySocket.onclose = (e) => {
-        console.log("Lobby socket closedf unexpectedly.");
+        console.log("Lobby socket closed unexpectedly.");
       };
     }
   }
