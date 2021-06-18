@@ -149,6 +149,7 @@ export default class Lobby extends Component {
       let urlscheme = window.location.protocol === "https:" ? "wss://" : "ws://";
       const lobbyURL = urlscheme + window.location.host + "/ws/lobby/";
       this.lobbySocket = new WebSocket(lobbyURL);
+      waitForSocketConnection(this.lobbySocket, () => console.log("Wait for lobbySocket"));
       this.lobbySocket.onmessage = (e) => {
         let data = JSON.parse(e.data);
         if (data.message) {

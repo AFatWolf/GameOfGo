@@ -34,14 +34,11 @@ export default class App extends Component {
     fetch("/api/is-logged-in", requestOptions)
       .then((res) => res.json())
       .then((data) => {
-        console.log("Is logged In");
-        console.log(data);
         this.setState({
           isLoggedIn: data.is_logged_in,
           username: data.username,
           code: data.code ? data.code : null,
         });
-        console.log(this.state);
       });
   }
 
@@ -88,8 +85,6 @@ export default class App extends Component {
           <Route
             path="/waiting"
             render={(props) => {
-              console.log("waiting rendering");
-              console.log(this.state.code);
               return this.state.code ? (
                 <WaitingRoom {...props} code={this.state.code} />
               ) : (
